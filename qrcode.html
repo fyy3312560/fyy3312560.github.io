@@ -33,6 +33,15 @@
 		document.getElementById('btnBack').addEventListener('click',function(){
 			my.navigateTo({url: '../EntrySecond/EntrySecond'});
 		})
+		
+		if(!m){
+			m={}
+		}
+
+		my.onMessage = function(e) {
+			alert('e',e);
+		  console.log(e); //{'sendToWebView': '1'}
+		}
 	</script>
 </body>
 </html>
