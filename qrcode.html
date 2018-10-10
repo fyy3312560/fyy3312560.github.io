@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.qrcode.js"></script>
+	<script type="text/javascript" src="../js/qrcode.js"></script>
+	<script>
+		if (navigator.userAgent.indexOf('AlipayClient') > -1) {
+		    document.writeln('<script src="https://appx/web-view.min.js"' + '>' + '<' + '/' + 'script>');
+		}
+	</script>
+
+</head>
+<body>
+	<div id="qrcode"></div>
+	<script>
+    if(my){
+        my.onMessage = function(e) {
+          console.log(e); //{'sendToWebView': '1'}
+          alert("e",e);
+        }
+		}
+		jQuery('#qrcode').qrcode("this plugin is great");
+	</script>
+</body>
+</html>
