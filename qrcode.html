@@ -16,9 +16,17 @@
 <body>
 	<div id="qrcode"></div>
 	<script>
-    
-		jQuery('#qrcode').qrcode("this plugin is great");
-		
+		function getParameterByName(name){
+		    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+		    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+		    var results = regex.exec(window.location.search);
+		    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+		}
+	</script>
+	<script>
+		console.log('location:',getParameterByName('param'));
+		jQuery('#qrcode').qrcode(getParameterByName('param'));
+
 		if(my){
 			my.onMessage = function(e) {
 			  console.log(e); //{'sendToWebView': '1'}
