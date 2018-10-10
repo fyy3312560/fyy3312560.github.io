@@ -34,13 +34,15 @@
 			my.navigateTo({url: '../EntrySecond/EntrySecond'});
 		})
 		
-		if(!m){
-			m={}
+		//监听触发操作
+		function hashChangeFire(){
+		    document.writeln("1231561")
 		}
 
-		my.onMessage = function(e) {
-			document.writeln('111')
-		  console.log(e); //{'sendToWebView': '1'}
+		//url变化监听器
+		if( ('onhashchange' in window) && ((typeof document.documentMode==='undefined') || document.documentMode==8)) {
+		    // 浏览器支持onhashchange事件
+		    window.onhashchange = hashChangeFire;  // TODO，对应新的hash执行的操作函数
 		}
 	</script>
 </body>
