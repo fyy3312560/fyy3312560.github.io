@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<button type="button" id="btnBack">返回</button>
+	<div id="btnBack">返回</div>
 	<div id="qrcode"></div>
 	<script>
 		function getParameterByName(name){
@@ -30,10 +30,7 @@
 		console.log('location:',getParameterByName('param'));
 		jQuery('#qrcode').qrcode(getParameterByName('param'));
 
-		document.getElementById('btnBack').addEventListener('click',function(){
-			my.navigateTo({url: '../EntrySecond/EntrySecond'});
-		})
-		
+		document.getElementById('btnBack').innerHTML = getParameterByName('param');
 		//监听触发操作
 		function hashChangeFire(){
 		    document.writeln("1231561")
