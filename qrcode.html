@@ -16,13 +16,15 @@
 <body>
 	<div id="qrcode"></div>
 	<script>
-    if(my){
-        my.onMessage = function(e) {
-          console.log(e); //{'sendToWebView': '1'}
-          alert("e",e);
-        }
-		}
+    
 		jQuery('#qrcode').qrcode("this plugin is great");
+		
+		if(my){
+			my.onMessage = function(e) {
+			  console.log(e); //{'sendToWebView': '1'}
+			  alert("e",e);
+			}
+		}
 	</script>
 </body>
 </html>
